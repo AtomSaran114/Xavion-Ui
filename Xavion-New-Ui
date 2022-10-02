@@ -2,7 +2,7 @@ local library = {
 		flags = { },
 		items = { }
 	}
-    if _G.Color == nil then _G.Color = Color3.fromRGB(80, 245, 245) end
+    if _G.Color == nil then _G.Color = Color3.fromRGB(255, 26, 117) end
     if _G.Color2 == nil then _G.Color2 = Color3.fromRGB(0, 151, 156) end
     -- Services
 	local players = game:GetService("Players")
@@ -20,7 +20,7 @@ local library = {
         fontsize = 15,
         titlesize = 18,
         font = Enum.Font.Code,
-        background = "rbxassetid://5553946656",
+        background = "",
         tilesize = 50,
         cursor = false,
         cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
