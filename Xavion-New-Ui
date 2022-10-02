@@ -16,6 +16,7 @@ local library = {
 	local player = players.LocalPlayer
 	local mouse = player:GetMouse()
 	local camera = game.Workspace.CurrentCamera
+	local UICorner = Instance.new("UICorner")
 	library.theme = {
         fontsize = 15,
         titlesize = 18,
@@ -274,6 +275,9 @@ local library = {
 		window.Frame.Text = ""
 		window.Frame.BackgroundColor3 = window.theme.backgroundcolor
 		window.Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+		
+		UICorner.Parent = window.Frame
+		
 		updateevent.Event:Connect(function(theme)
 			window.Frame.BackgroundColor3 = theme.backgroundcolor
 		end)
