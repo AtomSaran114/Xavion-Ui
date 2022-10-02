@@ -2,7 +2,7 @@ local library = {
 		flags = { },
 		items = { }
 	}
-    if _G.Color == nil then _G.Color = Color3.fromRGB(255, 26, 117) end
+    if _G.Color == nil then _G.Color = Color3.fromRGB(80, 245, 245) end
     if _G.Color2 == nil then _G.Color2 = Color3.fromRGB(0, 151, 156) end
     -- Services
 	local players = game:GetService("Players")
@@ -16,10 +16,12 @@ local library = {
 	local player = players.LocalPlayer
 	local mouse = player:GetMouse()
 	local camera = game.Workspace.CurrentCamera
-	local UICorner = Instance.new("UICorner")
 	library.theme = {
-        font = Enum.Font.Code,
+        fontsize = 15,
+        titlesize = 18,
+        font = Enum.Font.ArialBold,
         background = "",
+        tilesize = 50,
         cursor = false,
         cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
         backgroundcolor = Color3.fromRGB(20, 20, 20),
@@ -269,13 +271,6 @@ local library = {
 		window.Frame.Text = ""
 		window.Frame.BackgroundColor3 = window.theme.backgroundcolor
 		window.Frame.AnchorPoint = Vector2.new(0.5, 0.5)
-		
-		local Main_UiConner  = Instance.new("UICorner")
-
-		Main_UiConner.CornerRadius = UDim.new(0, 4)
-		Main_UiConner.Name = "Main_UiConner"
-		Main_UiConner.Parent = window
-		
 		updateevent.Event:Connect(function(theme)
 			window.Frame.BackgroundColor3 = theme.backgroundcolor
 		end)
@@ -293,6 +288,36 @@ local library = {
 			end
 			return (#objects ~= 0 and objects[1].AbsolutePosition ~= Pos)
 		end
+		window.BlackOutline = Instance.new("Frame", window.Frame)
+		window.BlackOutline.Name = "outline"
+		window.BlackOutline.ZIndex = 1
+		window.BlackOutline.Size = window.size + UDim2.fromOffset(2, 2)
+		window.BlackOutline.BorderSizePixel = 0
+		window.BlackOutline.BackgroundColor3 = window.theme.outlinecolor2
+		window.BlackOutline.Position = UDim2.fromOffset(-1, -1)
+		updateevent.Event:Connect(function(theme)
+			window.BlackOutline.BackgroundColor3 = theme.outlinecolor2
+		end)
+		window.Outline = Instance.new("Frame", window.Frame)
+		window.Outline.Name = "outline"
+		window.Outline.ZIndex = 0
+		window.Outline.Size = window.size + UDim2.fromOffset(4, 4)
+		window.Outline.BorderSizePixel = 0
+		window.Outline.BackgroundColor3 = window.theme.outlinecolor
+		window.Outline.Position = UDim2.fromOffset(-2, -2)
+		updateevent.Event:Connect(function(theme)
+			window.Outline.BackgroundColor3 = theme.outlinecolor
+		end)
+		window.BlackOutline2 = Instance.new("Frame", window.Frame)
+		window.BlackOutline2.Name = "outline"
+		window.BlackOutline2.ZIndex = -1
+		window.BlackOutline2.Size = window.size + UDim2.fromOffset(6, 6)
+		window.BlackOutline2.BorderSizePixel = 0
+		window.BlackOutline2.BackgroundColor3 = window.theme.outlinecolor2
+		window.BlackOutline2.Position = UDim2.fromOffset(-3, -3)
+		updateevent.Event:Connect(function(theme)
+			window.BlackOutline2.BackgroundColor3 = theme.outlinecolor2
+		end)
 		window.TopBar = Instance.new("Frame", window.Frame)
 		window.TopBar.Name = "top"
 		window.TopBar.Size = UDim2.fromOffset(window.size.X.Offset, window.theme.topheight)
