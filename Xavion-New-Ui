@@ -270,7 +270,11 @@ local library = {
 		window.Frame.BackgroundColor3 = window.theme.backgroundcolor
 		window.Frame.AnchorPoint = Vector2.new(0.5, 0.5)
 		
-		UICorner.Parent = window.Frame
+		local Main_UiConner  = Instance.new("UICorner")
+
+		Main_UiConner.CornerRadius = UDim.new(0, 4)
+		Main_UiConner.Name = "Main_UiConner"
+		Main_UiConner.Parent = window
 		
 		updateevent.Event:Connect(function(theme)
 			window.Frame.BackgroundColor3 = theme.backgroundcolor
