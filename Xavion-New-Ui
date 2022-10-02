@@ -1,5 +1,3 @@
-_G.Color = Color3.fromRGB(255, 26, 117)
-
 local library = {
 		flags = { },
 		items = { }
