@@ -5,7 +5,7 @@
 
 local Library = {}
 
-function Library:CreateWin()
+function Library:CreateWin(NameHub)
 	local WellLib = Instance.new("ScreenGui")
 	local Lib = Instance.new("Frame")
 	local Top = Instance.new("Frame")
@@ -15,9 +15,6 @@ function Library:CreateWin()
 	local TextLabel = Instance.new("TextLabel")
 	local WinName = Instance.new("TextLabel")
 	local UIPadding = Instance.new("UIPadding")
-	local TextButton = Instance.new("TextButton")
-	local UICorner_2 = Instance.new("UICorner")
-	local UICorner_3 = Instance.new("UICorner")
 
 	--Properties:
 
@@ -73,7 +70,7 @@ function Library:CreateWin()
 	WinName.Position = UDim2.new(-0.001016872, 0, 0.0113728326, 0)
 	WinName.Size = UDim2.new(0, 216, 0, 25)
 	WinName.Font = Enum.Font.SourceSans
-	WinName.Text = "Well Hub - Premium"
+	WinName.Text = NameHub
 	WinName.TextColor3 = Color3.fromRGB(255, 255, 255)
 	WinName.TextSize = 20.000
 
