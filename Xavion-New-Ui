@@ -27,6 +27,8 @@ function Library:CreateWin(NameHub)
 	Lib.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
 	Lib.Position = UDim2.new(0.271449238, 0, 0.0367346928, 0)
 	Lib.Size = UDim2.new(0, 380, 0, 454)
+	Lib.Draggable = true
+	Lib.Active = true
 
 	Top.Name = "Top"
 	Top.Parent = Lib
