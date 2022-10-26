@@ -15,7 +15,6 @@ function Library:CreateWin(NameHub)
 	local TextLabel = Instance.new("TextLabel")
 	local WinName = Instance.new("TextLabel")
 	local UIPadding = Instance.new("UIPadding")
-	local UIListLayout = Instance.new("UIListLayout")
 
 	--Properties:
 
@@ -78,8 +77,6 @@ function Library:CreateWin(NameHub)
 	WinName.TextSize = 20.000
 
 	UIPadding.Parent = Top
-	UIListLayout.Parent = Lib
-	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 	
 	local TabLibrary = {}
 	
