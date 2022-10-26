@@ -15,6 +15,7 @@ function Library:CreateWin(NameHub)
 	local TextLabel = Instance.new("TextLabel")
 	local WinName = Instance.new("TextLabel")
 	local UIPadding = Instance.new("UIPadding")
+	local UIListLayout = Instance.new("UIListLayout")
 
 	--Properties:
 
