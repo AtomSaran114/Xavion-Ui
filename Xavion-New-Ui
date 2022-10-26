@@ -26,6 +26,8 @@ function Library:CreateWin(NameHub, KeyCode)
 	Lib.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
 	Lib.Position = UDim2.new(0.167458922, 0, 0.0755102038, 0)
 	Lib.Size = UDim2.new(0, 435, 0, 510)
+	Lib.Active = true
+	Lib.Draggable = true
 
 	UICorner.CornerRadius = UDim.new(0, 4)
 	UICorner.Parent = Lib
@@ -62,7 +64,7 @@ function Library:CreateWin(NameHub, KeyCode)
 	WinName.Position = UDim2.new(0.0817417502, 0, 0.0447062217, 0)
 	WinName.Size = UDim2.new(0, 144, 0, 25)
 	WinName.Font = Enum.Font.SourceSans
-	WinName.Text = "Well Hub - Premium"
+	WinName.Text = NameHub
 	WinName.TextColor3 = Color3.fromRGB(255, 255, 255)
 	WinName.TextSize = 20.000
 
@@ -76,7 +78,7 @@ function Library:CreateWin(NameHub, KeyCode)
 	TextBox.Size = UDim2.new(0, 110, 0, 23)
 	TextBox.Font = Enum.Font.SourceSans
 	TextBox.PlaceholderColor3 = Color3.fromRGB(42, 42, 42)
-	TextBox.Text = ""
+	TextBox.Text = KeyCode
 	TextBox.TextColor3 = Color3.fromRGB(100, 100, 100)
 	TextBox.TextSize = 14.000
 	
