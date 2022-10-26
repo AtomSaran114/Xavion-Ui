@@ -5,7 +5,7 @@
 
 local Library = {}
 
-function Library:CreateWin(NameHub, KeyCode)
+function Library:CreateWin(NameHub)
 	local WellLib = Instance.new("ScreenGui")
 	local Lib = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
@@ -78,7 +78,7 @@ function Library:CreateWin(NameHub, KeyCode)
 	TextBox.Size = UDim2.new(0, 110, 0, 23)
 	TextBox.Font = Enum.Font.SourceSans
 	TextBox.PlaceholderColor3 = Color3.fromRGB(42, 42, 42)
-	TextBox.Text = KeyCode
+	TextBox.Text = "[Right Control]"
 	TextBox.TextColor3 = Color3.fromRGB(100, 100, 100)
 	TextBox.TextSize = 14.000
 	
