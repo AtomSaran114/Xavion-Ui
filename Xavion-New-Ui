@@ -77,12 +77,15 @@ function Library:CreateWin(NameHub)
 	WinName.TextSize = 20.000
 
 	UIPadding.Parent = Top
+	UIListLayout.Parent = Lib
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 	
 	local TabLibrary = {}
 	
 	function TabLibrary:AddButton(Name)
 		local TextButton = Instance.new("TextButton")
 		local UICorner_2 = Instance.new("UICorner")
+		
 		TextButton.Parent = Lib
 		TextButton.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 		TextButton.BorderSizePixel = 0
