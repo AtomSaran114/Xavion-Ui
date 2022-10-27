@@ -1,3 +1,12 @@
+repeat wait(1) until game:IsLoaded()
+
+do
+	local ui = game.CoreGui:FindFirstChild("WellLib")
+	if ui then
+		ui:Destroy()
+	end
+end
+
 local Library = {}
 
 local UserInputService = game:GetService("UserInputService")
@@ -7,7 +16,7 @@ local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 local tween = game:GetService("TweenService")
 
-function Library:CreateWin(HubName)
+function Library:CreateWin(HubName,ToggleUI)
 	local WellLib = Instance.new("ScreenGui")
 	local MainFrame = Instance.new("Frame")
 	local mainCorner = Instance.new("UICorner")
@@ -99,6 +108,19 @@ function Library:CreateWin(HubName)
 	Hub.TextSize = 19.000
 	Hub.TextWrapped = true
 	Hub.TextXAlignment = Enum.TextXAlignment.Left
+	
+	local toggle = false function onKeyPress(actionName, userInputState, inputObject)
+        if userInputState == Enum.UserInputState.Begin then
+            if toggle == false then
+            toggle = true
+            WellLib.Enabled = true
+            else
+            toggle = false
+            WellLib.Enabled = false
+            end
+        end
+	end 
+    game.ContextActionService:BindAction("keyPress", onKeyPress, false, ToggleUI)
 	
 	local pagesFolder = Instance.new("Folder")
 	
@@ -195,8 +217,32 @@ function Library:CreateWin(HubName)
 			buttonCorner.CornerRadius = UDim.new(0, 3)
 			buttonCorner.Name = "buttonCorner"
 			buttonCorner.Parent = TextButton
+		end
+		
+		function ElementHandler:AddLabel(btnText1)
+			btnText1 = btnText1 or "Text Button"
+
+			local TextButton = Instance.new("TextButton")
+			local buttonCorner = Instance.new("UICorner")
 			
-			function ElementHandler:AddLine()
+			TextButton.Parent = newPage
+			TextButton.BackgroundColor3 = Color3.fromRGB(44, 48, 53)
+			TextButton.BackgroundTransparency = 1.000
+			TextButton.Position = UDim2.new(0.0245098043, 0, 0, 0)
+			TextButton.Size = UDim2.new(0, 291, 0, 32)
+			TextButton.AutoButtonColor = false
+			TextButton.Font = Enum.Font.Gotham
+			TextButton.Text = btnText1
+			TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+			TextButton.TextSize = 14.000
+			TextButton.ZIndex = 1
+
+			buttonCorner.CornerRadius = UDim.new(0, 3)
+			buttonCorner.Name = "buttonCorner"
+			buttonCorner.Parent = TextButton
+		end
+		
+		    function ElementHandler:AddLine()
 			    seInfo = seInfo or "Line"
 			    
 			    local Line = Instance.new("TextButton")
@@ -550,10 +596,7 @@ function Library:CreateWin(HubName)
     			end
     			return dropfunc
     		end
-		end
 		return ElementHandler
 	end
 	return TabHandler
 end
-
-return Library
