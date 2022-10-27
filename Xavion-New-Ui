@@ -555,3 +555,5 @@ function Library:CreateWin(HubName)
 	end
 	return TabHandler
 end
+
+return Library
